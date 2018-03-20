@@ -7,19 +7,29 @@ var config = {
     storageBucket: "train-scheduler-week-7-c0417.appspot.com",
     messagingSenderId: "682076941787"
   };
+
   firebase.initializeApp(config);
 
   var database = firebase.database();
 
   var connectionsRef = database.ref("/trains");
 
-// add train button here:
+// event listener for "add train" button here:
 
   $("#add-train-btn").on("click", function() {
     var name = $("#train-name-input").val().trim();
     var destination = $("#destination-input").val().trim();
     var firstTime = $("#first-time-input").val().trim();
     var frequency = $("#frequency-input").val().trim();
+
+    connectionsRef.push({
+        name: name,
+        destination: destination,
+        firstTime: firstTime,
+        frequency: frequency,
+        
+    });
+    return false;
 
   })
 
