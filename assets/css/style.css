@@ -1,0 +1,21 @@
+#header1 {
+    height: 70px;
+    line-height: 70px;
+    background-color: rgb(3, 8, 66);
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+}
+
+#footer1 {
+    height: 40px;
+    line-height: 40px;
+    background-color: rgb(3, 8, 66);
+    color: #ffffff;
+    font-size: 12px;
+    text-align: center;
+}
+
+.panel-title {
+    font-weight: bold;
+}
