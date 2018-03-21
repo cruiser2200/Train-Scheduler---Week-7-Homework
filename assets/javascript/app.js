@@ -41,4 +41,27 @@ var config = {
     var trainFrequency = childSnapshot.val().frequency;
 
 
+    // logic for "next arrival":
+
+      var firstTime = moment(firstTrainTime, "hh:mm").subtract(1, "years");
+      console.log(firstTime);
+  // calculate the difference between current time and first time 
+      var diffTime = moment().diff(moment(firstTime), "minutes");
+  // calculate number of minutes since the last train left:
+      var timeApart = diffTime % trainFrequency;
+      console.log(timeApart);
+  // calculate number of minutes until next arrival:
+      var minAway = trainFrequency - timeApart;
+      console.log(minAway);
+  // calculate time of next arrival:
+      var nextArrival = moment().add(minAway, "minutes");
+      nextArrival=moment(nextArrival).format("hh:mm");
+
+  // append response to html:
+  $("tbody").append("<tr>" +
+  "<td>" + trainName + "</td><td>" + trainDestination + "</td><td>" + trainFrequency +
+  "</td><td>" + nextArrival + "</td><td>" + minAway + "</td></tr>");
+
+
   })
+

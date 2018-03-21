@@ -1,13 +1,17 @@
 #header1 {
-    height: 70px;
-    line-height: 70px;
+    font-family: 'Oswald:600', sans-serif;
+    height: 90px;
+    line-height: 90px;
     background-color: rgb(3, 8, 66);
     color: #ffffff;
+    font-size: 72px;
     font-weight: bold;
     text-align: center;
+    padding-top: 12px;
 }
 
 #footer1 {
+    font-family: 'Oswald', sans-serif;
     height: 40px;
     line-height: 40px;
     background-color: rgb(3, 8, 66);
